@@ -9,10 +9,11 @@ export const routes: Routes = [
   {
     path: '',
     children: [
-      { path: 'tickets', component: TicketsComponent },
-      { path: 'profile/:id', component: ProfileComponent },
-      { path: 'ticket/:id', component: TicketComponent },
+      { path: 'tickets', component: TicketsComponent, data: { breadcrumb: 'tickets' } },
+      { path: 'profile/:id', component: ProfileComponent, data: { breadcrumb: 'profile' } },
+      { path: 'ticket/:id', component: TicketComponent, data: { breadcrumb: 'ticket' } },
     ],
+    data: { breadcrumb: 'index' },
     canActivate: [loginGuard],
   },
   { path: 'login', component: LoginComponent },

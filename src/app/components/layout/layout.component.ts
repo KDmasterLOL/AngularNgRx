@@ -4,11 +4,12 @@ import { Router, RouterLink } from '@angular/router';
 import { logoutAction } from '@lib/store/login.actions';
 import { Profile } from '@lib/types';
 import { Store } from '@ngrx/store';
+import { BreadcrumbComponent } from 'breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [RouterLink, NgIf],
+  imports: [RouterLink, NgIf, BreadcrumbComponent],
   templateUrl: './layout.component.html'
 })
 export class LayoutComponent {

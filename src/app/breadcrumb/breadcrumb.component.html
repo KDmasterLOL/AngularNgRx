@@ -1,0 +1,9 @@
+<nav class="flex justify-center">
+  @for(breadcrumb of breadcrumbs | async; track breadcrumb; let last = $last){
+  @if(last){
+  {{ breadcrumb.label }}
+  } @else{
+  <a class="text-blue-700 mr-2" [routerLink]="breadcrumb.url">{{ breadcrumb.label }}</a> &gt;
+  }
+  }
+</nav>
