@@ -1,3 +1,4 @@
+import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { logoutAction } from '@lib/store/login.actions';
@@ -7,7 +8,7 @@ import { Store } from '@ngrx/store';
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, NgIf],
   templateUrl: './layout.component.html'
 })
 export class LayoutComponent {
