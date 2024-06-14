@@ -1,7 +1,8 @@
 import { DatePipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { changeTicketAction } from '@lib/store/ticket.actions';
+import { Router } from '@angular/router';
+import { changeTicketAction, removeTicketAction } from '@lib/store/ticket.actions';
 import { Ticket } from '@lib/types';
 import { Store } from '@ngrx/store';
 
@@ -25,10 +26,17 @@ export class TicketComponent {
     title: ['']
   })
 
-  constructor(private formBuilder: FormBuilder, private store: Store<{ tickets: Ticket[] }>) { }
+  constructor(private router: Router, private formBuilder: FormBuilder, private store: Store<{ tickets: Ticket[] }>) { }
   update_ticket(ev: Event) {
     ev.preventDefault()
     const new_ticket = { ...this.ticket, title: this.ticket_form.value.title } as Ticket
     this.store.dispatch(changeTicketAction({ new_ticket }))
+  }
+  back() {
+    this.router.navigate(['/tickets'])
+  }
+  remove_ticket() {
+    this.store.dispatch(removeTicketAction({ to_remove: this.ticket! }))
+    this.back()
   }
 }

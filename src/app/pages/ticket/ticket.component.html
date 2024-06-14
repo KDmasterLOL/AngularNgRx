@@ -1,6 +1,6 @@
 @if(ticket){
 <h1 class="text-3xl font-bold">Ticket: {{ticket.id}}. Created at {{ticket.creation_data | date}}</h1>
-<div class="flex justify-center items-center">
+<div class="flex flex-col justify-center items-center">
   <form [formGroup]="ticket_form" (ngSubmit)="update_ticket($event)">
     <div>
       <label class="block">Title:</label>
@@ -10,6 +10,8 @@
       <button type="submit">Update ticket</button>
     </div>
   </form>
+  <button class="mt-10" (click)="back()">Back</button>
+  <button class="bg-red-300 hover:bg-red-500 mt-5" (click)="remove_ticket()">Remove</button>
 </div>
 } @else {
 <p>There is no ticket with id {{_id}}</p>
