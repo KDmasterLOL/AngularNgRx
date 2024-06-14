@@ -1,5 +1,5 @@
 {
-  "name": "angular-rx-js",
+  "name": "angular-ng-rx",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:Angular_RxJS": "node dist/angular-rx-js/server/server.mjs"
+    "serve:ssr:Angular_NgRx": "node dist/angular-ng-rx/server/server.mjs"
   },
   "private": true,
   "dependencies": {
