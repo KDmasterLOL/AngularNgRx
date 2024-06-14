@@ -1,0 +1,15 @@
+<header class="bg-black text-white justify-between items-center grid grid-cols-3">
+  <div></div>
+  <nav>
+    <ul class="list-none flex gap-10 justify-center">
+      <li><a routerLink="tickets">tickets</a></li>
+      <li><a routerLink="profile/1">profile</a></li>
+    </ul>
+  </nav>
+  <div class="flex justify-end">
+    <button class="ml-auto mini text-white " (click)="logout()">Logout</button>
+  </div>
+</header>
+<main class="px-20 mt-5">
+  <ng-content></ng-content>
+</main>

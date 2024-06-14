@@ -1,0 +1,10 @@
+<h1>Login</h1>
+<p>Your Error is {{error}}</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit($event)">
+  <div><label for="username">Username: </label><input type="text" name="username" placeholder="username"
+      formControlName="username">
+  </div>
+  <div><label for="password">password: </label><input type="text" name="password" placeholder="password"
+      formControlName="password"></div>
+  <div><button type="submit">Login</button> </div>
+</form>

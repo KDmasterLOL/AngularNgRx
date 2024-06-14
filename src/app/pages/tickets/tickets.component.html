@@ -1,0 +1,4 @@
+<div class="m-auto w-fit">
+  <app-display-tickets [tickets]="(tickets$ | async) || []"></app-display-tickets>
+</div>
+<div class="w-fit mx-auto mt-4"><button (click)="create_ticket()">Create ticket</button></div>
